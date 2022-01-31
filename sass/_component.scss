@@ -1,0 +1,241 @@
+.hamburger-menu {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    z-index: 20;
+
+
+    @media (max-width:500px) {
+        width: 30px;
+        height: 30px;
+        top: 5%;
+        right: 5%;
+    }
+
+    .menu {
+        @extend %fitspace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: transform 0.5s;
+
+        &-line {
+            background-color: $color-primary;
+            width: 100%;
+            height: 4px;
+            transition: all .5s;
+            transform-origin: right;
+        }
+    }
+}
+
+.logo {
+    @include flexlayout;
+    width: 110px;
+    height: 110px;
+    color: $color-primary;
+    font-size: 70px;
+    border: 3px solid $color-primary;
+    border-radius: 50%;
+    margin-left: 20px;
+    text-decoration: none;
+
+    @media (max-width:500px) {
+        width: 90px;
+        height: 90px;
+        font-size: 50px;
+    }
+}
+
+.brand {
+    color: $color-light;
+    display: flex;
+    align-items: center;
+
+    @media (max-width:500px) {
+        flex-direction: column;
+    }
+
+    .main-name {
+        @include textStyle();
+        font-size: 50px;
+        margin-bottom: 8px;
+
+        @media (max-width:500px) {
+            font-size: 45px;
+        }
+    }
+
+    .sub-name {
+        @include textStyle();
+        font-size: 30px;
+        margin-bottom: 8px;
+
+        @media (max-width:500px) {
+            font-size: 25px;
+        }
+    }
+}
+
+
+.main-header {
+    font-size: 100px;
+    font-family: $font-nastaligh;
+    color: $color-primary;
+    font-weight: lighter;
+
+    @media (max-width:500px) {
+        font-size: 85px;
+    }
+}
+
+.sub-header {
+    font-size: 40px;
+    color: $color-light;
+    font-weight: lighter;
+
+    @media (max-width:500px) {
+        font-size: 25px;
+    }
+}
+
+.main-btn {
+    @include textStyle;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background-color: inherit;
+    margin-top: 25px;
+    width: 170px;
+    height: 45px;
+    cursor: pointer;
+    transition: all, .5s;
+
+    &:hover {
+        color: $color-black;
+        background-color: $color-primary;
+    }
+}
+
+.card {
+    width: 33.3333%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+    // top: 150px;
+
+    @media (max-width:800px) {
+        width: 50%;
+        height: 40vw;
+    }
+
+    &:hover .card-overlay {
+        right: 0;
+    }
+
+    &-overlay {
+        @extend %fitspace;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: -100%;
+        background-color: rgba($color-primary, 0.4);
+        color: $color-white;
+        @include flexlayout;
+        flex-direction: column;
+        transition: right .5s;
+
+        &-header {
+            @include textStyle;
+            font-family: $font-nastaligh;
+            font-size: 60px;
+
+            @media (max-width:1000px) {
+                font-size: 45px;
+
+                @media (max-width:500px) {
+                    display: none;
+                }
+            }
+        }
+
+        &-paragraph {
+            @include textStyle;
+            font-family: $font-sahel;
+            font-size: 30px;
+
+            @media (max-width:1000px) {
+                font-size: 15px;
+            }
+
+            @media (max-width:500px) {
+                display: none;
+            }
+        }
+
+        &-btn {
+            background-color: $color-white;
+            border: none;
+            border-radius: 20px;
+            color: $color-primary;
+            padding: 10px 35px;
+            margin-top: 30px;
+
+            @media (max-width:1000px) {
+                padding: 8px 30px;
+                margin-top: 15px;
+            }
+
+            @media (max-width:500px) {
+                padding: 5px 15px;
+            }
+        }
+    }
+
+    &-img {
+        @extend %fitspace;
+        object-fit: cover;
+        opacity: .8;
+    }
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    margin: 50px 25px 50px 0;
+
+    &-item {
+        margin-left: 30px;
+
+        @media (max-width:500px) {
+            margin-left: 25px;
+        }
+    }
+
+    &-link {
+        color: $color-light;
+        font-size: 50px;
+        transition: color .5s;
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        @media (max-width:500px) {
+            font-size: 40px;
+        }
+    }
+}
+
+.footer-copyright-paragraph {
+    color: $color-light;
+    font-size: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 20px;
+
+    @media (max-width:500px) {
+        font-size: 15px;
+    }
+}
